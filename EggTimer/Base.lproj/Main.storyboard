@@ -127,9 +127,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-Ma-0lZ">
+                                                <rect key="frame" x="0.0" y="141" width="374" height="5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="ghR-ro-2Zg"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="3fh-Ma-0lZ" firstAttribute="top" secondItem="sbz-e7-TIa" secondAttribute="bottom" constant="7.5" id="4ak-rD-HYU"/>
+                                            <constraint firstAttribute="trailing" secondItem="3fh-Ma-0lZ" secondAttribute="trailing" id="ORs-9G-Toq"/>
                                             <constraint firstItem="sbz-e7-TIa" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="T3N-qM-I6P"/>
+                                            <constraint firstItem="3fh-Ma-0lZ" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="UyE-at-TVj"/>
                                             <constraint firstItem="sbz-e7-TIa" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="gNj-Ft-OzP"/>
                                         </constraints>
                                     </view>
@@ -147,6 +158,7 @@
                     </view>
                     <connections>
                         <outlet property="preferenceLabel" destination="XLm-5r-pSP" id="4Um-Wf-DdS"/>
+                        <outlet property="progressView" destination="3fh-Ma-0lZ" id="IXP-5Z-5M6"/>
                         <outlet property="timeLabel" destination="sbz-e7-TIa" id="Ldx-yN-8TA"/>
                         <outletCollection property="eggButtons" destination="kNr-Dp-1Dg" collectionClass="NSMutableArray" id="4Ov-U4-AA9"/>
                         <outletCollection property="eggButtons" destination="Q3H-nl-7AG" collectionClass="NSMutableArray" id="vIw-sb-YuU"/>

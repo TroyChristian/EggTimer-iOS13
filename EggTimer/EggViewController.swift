@@ -22,10 +22,13 @@ class EggViewController: UIViewController {
     @IBOutlet var eggButtons: [UIButton]!
     
     
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBAction func EggSelector(_ sender: UIButton) {
         timer.invalidate() // invalidate the current timer running, if button is clicked again
         preferenceLabel.text = "Cooking..."
+        progressView.progress = 0.0
+        
 
         let hardness = sender.currentTitle
         guard hardness != nil else {return}
@@ -54,12 +57,20 @@ class EggViewController: UIViewController {
             print("Buttons title was not covered in switch case")
             
             
-        }                   //Timer invalidates itself since repeat=true
+        }
+        let increment = 1.0 / Float(time!) //determine increments of our progress bar
+        
+        
+        //Timer invalidates itself since repeat=true
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
             guard time != nil else {return}
             if time! > 0 {
                 time! -= 1
             print(time!)
+          
+            self.progressView.progress += increment
+                
+               
                 
             
                 
@@ -67,6 +78,7 @@ class EggViewController: UIViewController {
             else {
                 timer.invalidate()
                 self.preferenceLabel.text = "Done!"
+                
             }
             
             }
